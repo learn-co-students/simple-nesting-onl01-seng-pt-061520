@@ -1,4 +1,30 @@
 
+  #hopper
+    #operates on the programmer_hash and returns the value of 
+    #the :grace_hopper key 
+  #alan_kay_is_known_for
+    #operates on the programmer_hash and returns the value 
+    #of what Alan Kay is known for 
+  #dennis_ritchies_language
+    #operates on the programmer_hash and returns the value 
+    #of Dennis Ritchie's language as a string 
+  #adding_matz
+    #operates on the programmer_hash and adds a key/value 
+    #pair to the top level of the hash, returning the 
+    #newly-added-to hash 
+  #changing_alan
+    #operates on the programmer_hash and changes what 
+    #Alan Kay is known for, returning the newly-changed hash 
+   
+  #adding_to_dennis
+    #operates on the programmer_hash and adds 'Assembly' 
+    #to Dennis Ritchie's languages, returning the 
+    #newly-added-to-hash 
+
+
+
+
+
 def hopper
 	programmer_hash = 
  		{
@@ -16,12 +42,13 @@ def hopper
         }
      }
 
+     programmer_hash[:grace_hopper]
 
 end
 
 def alan_kay_is_known_for
 	# What combination of keys would you use to return the value of the :known_for key of :alan_kay?
-	
+
 	programmer_hash = 
  		{
         :grace_hopper => {
@@ -36,7 +63,11 @@ def alan_kay_is_known_for
           :known_for => "Unix",
           :languages => ["C"]
         }
-     }
+     } 
+     
+  programmer_hash[:alan_kay][:known_for]
+  
+  
 end
 
 def dennis_ritchies_language
@@ -55,6 +86,9 @@ def dennis_ritchies_language
           :languages => ["C"]
         }
      }
+     programmer_hash[:dennis_ritchie][:languages][0]
+     #puts programmer_hash
+     #figure out how to return AS A STRING NOT AN ARRAY
 end
 
 def adding_matz
@@ -80,6 +114,13 @@ def adding_matz
         }
      }
 
+programmer_hash[:yukihiro_matsumoto] = {
+  known_for: "Ruby",
+  languages:
+    ["LISP", "C"]
+  }
+  
+programmer_hash
     
 end
 
@@ -101,8 +142,12 @@ def changing_alan
      }
      #change what Alan Kay is :known_for to the value of the alans_new_info variable. 
      alans_new_info = "GUI"
+     programmer_hash[:alan_kay][known_for = "GUI"]
+     #wrong
      
-     
+   programmer_hash[:alan_kay][:known_for] = "GUI"
+  programmer_hash
+
 end
 
 def adding_to_dennis
@@ -121,5 +166,7 @@ def adding_to_dennis
           :languages => ["C"]
         }
      }
+     programmer_hash[:dennis_ritchie][:languages] << "Assembly"
+     programmer_hash
 
 end
